@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<p id="demo">Let AJAX change this text.</p>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+<script>
+
+function loadDoc() {
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+} else {
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "https://github.com/BrAvalos/laboratorio/blob/main/ejemplo.xml", false);
+    xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "https://github.com/BrAvalos/laboratorio/blob/main/ejemplo.xml");
+    xmlhttp.setRequestHeader('Content-Type', 'application/xml');
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+    document.getElementById("demo").innerHTML = xmlDoc;
+}
+</script>
+
+</body>
+</html>

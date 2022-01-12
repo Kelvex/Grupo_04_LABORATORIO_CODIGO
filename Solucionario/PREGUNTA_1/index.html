@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grupo04-Pregunta Numero 1</title>
+</head>
+<body>
+<p id="p1"></p>
+
+<script>
+var parser, xmlDoc;
+var text = "<consesionaria><carro>" +
+"<modelo>Sonata</modelo>" +
+"<marca>Hyundai</marca>" +
+"<anio>2022</anio>" +
+"</carro></consesionaria>";
+
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(text,"text/xml");
+
+document.getElementById("p1").innerHTML =
+xmlDoc.getElementsByTagName("modelo")[0].childNodes[0].nodeValue;
+</script>
+
+</body>
+</html>
