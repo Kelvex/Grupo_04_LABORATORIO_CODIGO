@@ -9,14 +9,21 @@
 	</style>
 </head>
 <body>
+	<div>
+		<img id="background" src="../../Imagenes/fondo.jpg"/> 
+	</div>
+	<div id="fixed" style="padding-left:140px; padding-top: 50px;">
+		<a href="../../index.html"><i class="fas fa-home"></i></a>
+		<h1>Pregunta 1</h1>
+		<p id="pregunta">Analizar una cadena de texto en un objeto DOM XML y extraer esa Información con JavaScript</p>
+		<p id="p3">Se tiene una consesionaria con un auto se obtiene el modelo del primer carro</p>
+		<button onclick="obtenerprimer();"> Obtener el primer modelo</button>
+		<button onclick="obtenersegundo();"> Obtener el segundo modelo</button>
+		<p id="p1"></p>
+		<br>
+		<button onclick="window.location.href='../../index.html'">Menu principal</button>
+	</div>
 	
-	<a href="../../index.html"><i class="fas fa-home"></i></a>
-	<h1>Pregunta 1</h1>
-	<p id="pregunta">Analizar una cadena de texto en un objeto DOM XML y extraer esa Información con JavaScript</p>
-	<p id="p3">Se tiene una consesionaria con un auto se obtiene el modelo del primer carro</p>
-	<button onclick="obtenerprimer();"> Obtener el primer modelo</button>
-	<button onclick="obtenersegundo();"> Obtener el segundo modelo</button>
-	<p id="p1"></p>
 
 	<script>
 		var parser, xmlDoc;
