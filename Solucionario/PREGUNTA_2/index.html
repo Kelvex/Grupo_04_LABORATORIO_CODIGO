@@ -11,15 +11,8 @@
 <script>
 
 function loadDoc() {
-  if (window.XMLHttpRequest) {
     xmlhttp = new XMLHttpRequest();
-} else {
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-}
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "https://github.com/BrAvalos/laboratorio/blob/main/ejemplo.xml", false);
-    xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "https://github.com/BrAvalos/laboratorio/blob/main/ejemplo.xml");
-    xmlhttp.setRequestHeader('Content-Type', 'application/xml');
+    xmlhttp.open("GET", "ejemplo.xml", false);
     xmlhttp.send();
     xmlDoc = xmlhttp.responseXML;
     document.getElementById("demo").innerHTML = xmlDoc;
