@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Grupo04-Pregunta Numero 1</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <style type="text/css">
-			#background{position:absolute; width:99%; height:130%;}
-			#fixed {position:absolute; top: 0px; left: 0px;}
-		</style>
+	<title>Grupo04-Pregunta Numero 1</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<style type="text/css">
+		#background{position:absolute; width:99%; height:130%;}
+		#fixed {position:absolute; top: 0px; left: 0px;}
+	</style>
 </head>
 <body>
-    <div>
-			<img id="background" src="../../Imagenes/fondo.jpg"/> 
-		</div>
-    <a href="../../index.html"><i class="fas fa-home"></i></a>
-    <h1>Pregunta 1</h1>
-    <p id="pregunta">Analizar una cadena de texto en un objeto DOM XML y extraer esa Información con JavaScript</p>
-    <p id="p3">Se tiene una consesionaria con un auto se obtiene el modelo del primer carro</p>
-<p id="p1"></p>
+	
+	<a href="../../index.html"><i class="fas fa-home"></i></a>
+	<h1>Pregunta 1</h1>
+	<p id="pregunta">Analizar una cadena de texto en un objeto DOM XML y extraer esa Información con JavaScript</p>
+	<p id="p3">Se tiene una consesionaria con un auto se obtiene el modelo del primer carro</p>
+	<button onclick="obtenerprimer();"> Obtener el primer modelo</button>
+	<button onclick="obtenersegundo();"> Obtener el segundo modelo</button>
+	<p id="p1"></p>
 
-<script>
-var parser, xmlDoc;
-var text = "<consesionaria><carro>" +
-"<modelo>Sonata</modelo>" +
-"<marca>Hyundai</marca>" +
-"<anio>2022</anio>" +
-"</carro></consesionaria>";
+	<script>
+		var parser, xmlDoc;
+		var text = "<consesionaria><carro>" +
+		"<modelo>Sonata</modelo>" +
+		"<marca>Hyundai</marca>" +
+		"<anio>2022</anio>" +
+		"</carro>"+"<carro>"+
+		"<modelo>Altima</modelo>" +
+		"<marca>Nissan</marca>" +
+		"<anio>2022</anio>" +
+		"</carro></consesionaria>";
 
-parser = new DOMParser();
-xmlDoc = parser.parseFromString(text,"text/xml");
+		parser = new DOMParser();
+		xmlDoc = parser.parseFromString(text,"text/xml");
+		function obtenerprimer(){
+			document.getElementById("p1").innerHTML = xmlDoc.getElementsByTagName("modelo")[0].childNodes[0].nodeValue;
+		}
+		function obtenersegundo(){
+			document.getElementById("p1").innerHTML = xmlDoc.getElementsByTagName("modelo")[1].childNodes[0].nodeValue;
 
-document.getElementById("p1").innerHTML =
-xmlDoc.getElementsByTagName("modelo")[0].childNodes[0].nodeValue;
-</script>
+		}
+	</script>
 
 </body>
 </html>
